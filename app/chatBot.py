@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import tornado.web
-import tornado.websocket
 
+import tornado.websocket
+import tornado.web
 #import tornado.httpservre
 import tornado.ioloop
 import tornado.options
