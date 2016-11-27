@@ -1,1 +1,1 @@
-web: python app/chatBot.py
+web: python ./app/chatBot.py
