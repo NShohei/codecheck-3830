@@ -12,6 +12,8 @@ import json
 
 from docopt import docopt
 
+port = int(os.environ.get("PORT"))
+
 #from uuid import uuid4
 class myBot():
     '''myBot command usage
@@ -37,7 +39,7 @@ class myBot():
 class MainHandler(tornado.web.RequestHandler):
     @tornado.web.asynchronous
     def get(self):
-        self.render("index.html")
+        self.render("index.html",port=str(port))
 
 class WebSocket(tornado.websocket.WebSocketHandler):
     clients = set()
@@ -83,12 +85,11 @@ app = tornado.web.Application(
     static_path = os.path.join(os.path.abspath(os.path.dirname(__file__)),"static"),
     debug = True
 )
+
+
+
 if __name__ == "__main__":
     tornado.options.parse_command_line()
-    #port = sys.argv[-1]
-    port = int(os.environ.get("PORT"))
     app.listen(port)
-    # if you want connect websocket
-    # wscat -c ws://<server ip>:3000/ws
     tornado.ioloop.IOLoop.instance().start()
 

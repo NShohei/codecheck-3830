@@ -1,7 +1,7 @@
 'use strict';
 
-
-var ws = new WebSocket('ws://mycbot.herokuapp.com:3000/ws');
+var ws_addr = 'ws://mycbot.herokuapp.com:'+ port + '/ws'
+var ws = new WebSocket(ws_addr);
 $(function () {
   $('form').submit(function(){
     var $this = $(this);
