@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import sys
+import os.environ
 import tornado.websocket
 import tornado.ioloop
 import tornado.options
@@ -85,8 +85,8 @@ app = tornado.web.Application(
 )
 if __name__ == "__main__":
     tornado.options.parse_command_line()
-    port = sys.argv[-1]
-    #port = int(os.environ.get("PORT", 3000))
+    #port = sys.argv[-1]
+    port = int(os.environ.get("PORT"))
     app.listen(port)
     # if you want connect websocket
     # wscat -c ws://<server ip>:3000/ws

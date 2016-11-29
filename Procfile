@@ -1,1 +1,1 @@
-web: python ./app/chatBot.py $PORT
+web: python ./app/chatBot.py
