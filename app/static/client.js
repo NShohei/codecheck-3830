@@ -1,6 +1,8 @@
 'use strict';
 
 var ws_addr = 'ws://mycbot.herokuapp.com:'+ port + '/ws'
+//var ws_addr = 'ws://localhost:'+ port + '/ws'
+console.log(ws_addr)
 var ws = new WebSocket(ws_addr);
 $(function () {
   $('form').submit(function(){
@@ -12,7 +14,9 @@ $(function () {
     var json = {};
     json.text = $('#m').val();
     var jsonmsg = JSON.stringify(json);
+    console.log('send message: %s', $('#m').val());
     ws.send(jsonmsg);
+    console.log('message sent');
     //ws.send($('#m').val());
     $('#m').val('');
     $('#messages')
@@ -22,6 +26,7 @@ $(function () {
     return false;
   });
   ws.onmessage = function(msg){
+    console.log('onmessage')
     var resp = JSON.parse(msg.data);
     $('#messages')
       .append($('<li>')

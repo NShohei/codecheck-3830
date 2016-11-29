@@ -14,7 +14,6 @@ from docopt import docopt
 
 port = int(os.environ.get("PORT"))
 
-#from uuid import uuid4
 class myBot():
     '''myBot command usage
 
