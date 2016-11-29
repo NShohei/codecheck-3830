@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import os.environ
+import os
 import tornado.websocket
 import tornado.ioloop
 import tornado.options
