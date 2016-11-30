@@ -38,7 +38,7 @@ class myBot():
 class MainHandler(tornado.web.RequestHandler):
     @tornado.web.asynchronous
     def get(self):
-        self.render("index.html",port=str(port))
+        self.render("index.html")
 
 class WebSocket(tornado.websocket.WebSocketHandler):
     clients = set()
