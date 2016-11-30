@@ -2,7 +2,7 @@
 
 var ws_addr = 'ws://mycbot.herokuapp.com/ws'
 //var ws_addr = 'ws://mycbot.herokuapp.com:'+ port + '/ws'
-//var ws_addr = 'ws://localhost:'+ port + '/ws'
+//var ws_addr = 'ws://192.168.33.10:'+ port + '/ws'
 console.log(ws_addr)
 var ws = new WebSocket(ws_addr);
 $(function () {
