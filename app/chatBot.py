@@ -12,7 +12,7 @@ import json
 
 from docopt import docopt
 
-port = 3000
+port = int(os.environ.get("PORT"))
 
 class myBot():
     '''myBot command usage
@@ -90,5 +90,6 @@ app = tornado.web.Application(
 if __name__ == "__main__":
     tornado.options.parse_command_line()
     app.listen(port)
+    print port
     tornado.ioloop.IOLoop.instance().start()
 
