@@ -12,7 +12,7 @@ import json
 
 from docopt import docopt
 
-port = int(os.environ.get("PORT"))
+port = 3000
 
 class myBot():
     '''myBot command usage

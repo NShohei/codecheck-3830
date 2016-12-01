@@ -1,6 +1,7 @@
 'use strict';
 
 var ws_addr = 'wss://mycbot.herokuapp.com/ws'
+
 console.log(ws_addr)
 var ws = new WebSocket(ws_addr);
 $(function () {
@@ -23,6 +24,7 @@ $(function () {
   ws.onmessage = function(msg){
     console.log('onmessage')
     var resp = JSON.parse(msg.data);
+    console.log(resp)
     if(resp.type == 'bot' && resp.responceType == 'help'){
 	arr = resp.text.split(/\r\n|\r|\n/);
 	for (i = 0; i < arr.length; i++) {
