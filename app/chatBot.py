@@ -20,8 +20,6 @@ class myBot():
     usage: 
          *  (bot|@bot|bot:) ping
          *  (bot|@bot|bot:) -h | --help
-    options:
-         *  -h --help     Show this screen
 
     '''
     def commandProcess(self,commands):
