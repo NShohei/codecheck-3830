@@ -15,7 +15,7 @@ from docopt import docopt
 port = int(os.environ.get("PORT"))
 
 class myBot():
-    '''myBot command usage
+    '''myBot command
 
     usage: 
          *  (bot|@bot|bot:) ping
