@@ -27,6 +27,7 @@ $(function () {
     console.log(resp)
     if(resp.type == 'bot' && resp.responceType == 'help'){
 	var arr = resp.text.split(/\*|:/);
+	var i = 0
 	for (i = 0; i < arr.length; i++) {
 	    $('#messages')
 		.append($('<li>')
