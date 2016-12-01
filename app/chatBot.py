@@ -44,7 +44,7 @@ class WebSocket(tornado.websocket.WebSocketHandler):
     clients = set()
     bot = myBot()
     prefixPattern = re.compile(r'^(bot:|@bot |bot )')
-    splitPattern = re.compile(r'\s*|:')
+    splitPattern = re.compile(r'[\s*,:]')
 
     def open(self):
         WebSocket.clients.add(self)
