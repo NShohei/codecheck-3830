@@ -29,10 +29,10 @@ class myBot():
         try:
             args = docopt(myBot.__doc__,commands)
         except:
-            return {"text":myBot.__doc__}
+            return {"success":True,"type":"bot","text":myBot.__doc__,"responceType":"help"}
         
         if args['ping']:
-            return {"success": True,"type": "bot","text": "pong"}
+            return {"success": True,"type": "bot","text": "pong","responceType":"ping"}
         
 
 class MainHandler(tornado.web.RequestHandler):
@@ -44,7 +44,7 @@ class WebSocket(tornado.websocket.WebSocketHandler):
     clients = set()
     bot = myBot()
     prefixPattern = re.compile(r'^(bot:|@bot |bot )')
-    splitPattern = re.compile(r'\s*|:')
+    splitPattern = re.compile(r'(\s*|:)')
 
     def open(self):
         WebSocket.clients.add(self)
