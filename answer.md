@@ -1,23 +1,24 @@
 ## デプロイ情報
 #### サービスURL
-{http://example.com}
+{http://mycbot.herokuapp.com/}
 
 #### リポジトリURL
-{https://github.com/uuuuu/rrrrr}
+{https://github.com/NShohei/codecheck-3830}
 
 #### 使用言語
-- {node / python / ruby / Go / etc.}
+- {python}
 
 #### 主なライブラリ
-- {ws / websockets / em-websocket / websocket / etc.}
+- {tornado.websocket}
 
 ####  ホスティングサービス
-- {AWS / DigitalOcean / Sakura / Heroku / etc.}
+- {Heroku}
 
 ## 独自コマンドの実装
 #### 追加したコマンド
 ```
-bot {command} [parameters...]
+bot -h
+bot --help
 ```
 
 #### コマンドの説明
